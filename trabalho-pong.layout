@@ -4,7 +4,7 @@
 		<File Name="glut.h" Top="No" Tabpos="1" TopLine="1">
 			<Cursor Line="1" Column="1"/>
 		</File>
-		<File Name="main.c" Top="Yes" Tabpos="2" TopLine="4">
+		<File Name="main.c" Top="Yes" Tabpos="2" TopLine="1">
 			<Cursor Line="2" Column="21"/>
 		</File>
 	</Files>
