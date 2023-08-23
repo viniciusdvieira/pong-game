@@ -42,7 +42,7 @@ int wall_hits_right = 0;
 
 bool jogo_iniciado = false;
 
-int time_left = 60; // tempo restante em segundos
+int time_left = 10; // tempo restante em segundos
 
 
 void DesenhaCronometro(void) {
@@ -149,35 +149,6 @@ void DesenhaTelaInicio(void) {
         glutBitmapCharacter(GLUT_BITMAP_HELVETICA_12, considera_text[i]);
     }
 }
-void DesenhaTelaFimDeJogo(void) {
-    glMatrixMode(GL_MODELVIEW);
-    glLoadIdentity();
-
-    // desenha o texto informando o lado vencedor e o placar
-    char winner_text[50];
-    if (score_left > score_right) {
-        sprintf(winner_text, "Lado Esquerdo Venceu! %d - %d", score_left, score_right);
-    } else {
-        sprintf(winner_text, "Lado Direito Venceu! %d - %d", score_right, score_left);
-    }
-    glRasterPos2i(width/2 - 170, height/2 + 50);
-
-    int i;
-    for (i = 0; winner_text[i] != '\0'; i++) {
-        glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, winner_text[i]);
-    }
-
-    // desenha o botão "voltar"
-    glColor3f(0.5f, 0.5f, 0.5f);
-    raquetes(width/2 - 50, height/2 - 100, 100, 50);
-    glColor3f(0.0f, 0.0f, 0.0f);
-    char back_text[] = "Voltar";
-    glRasterPos2i(width/2 - 25, height/2 - 75);
-    for (i = 0; back_text[i] != '\0'; i++) {
-        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, back_text[i]);
-    }
-}
-
 
 void bola() {
     // fly a bit
